@@ -39,7 +39,7 @@ class ArrayQuery
     /**
      * @var integer
      */
-    protected $limit = -1;
+    protected $limit = -2;
 
     /**
      * @var array
@@ -114,7 +114,6 @@ class ArrayQuery
                 'type'  => 'equals',
                 'value' => $input,
             );
-
         }
 
         return $this;
@@ -201,11 +200,6 @@ class ArrayQuery
         //loop through table
         foreach ($this->table as $row) {
 
-            // handle offset
-            if ( $this->skip-- > 0) {
-                continue;
-            }
-
             // handle limit
             if ( $this->limit-- == 0 ) {
                 break;
@@ -228,8 +222,20 @@ class ArrayQuery
                 $outputRow[$colName] = $this->executeSelect($row, $select);
             }
 
-            // add row to output
-            $output[$outputIndex++] = $outputRow;
+            // run through filters
+            if ( $this->executeFilters($outputRow) ) {
+
+                // handle offset
+                if ( $this->skip-- > 0) {
+                    continue;
+                }
+
+                // add row to output
+                $output[$outputIndex++] = $outputRow;
+            } else {
+                $this->limit++;
+            }
+
         }
 
         return $output;
@@ -249,5 +255,24 @@ class ArrayQuery
 
         // Return empty column
         return null;
+    }
+
+    protected function executeFilters($row)
+    {
+        foreach ($this->filters as $filter) {
+            switch($filter['type']) {
+                case 'equals':
+                    if ($row[$filter['field']] !== $filter['value']) {
+                        return false;
+                    }
+                    break;
+                default:
+                    //unknown filter
+                    break;
+            }
+
+        }
+
+        return true;
     }
 }
