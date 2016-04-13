@@ -1,0 +1,50 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "f2d93d684f129ad6f224e3b555c70cd2",
+    "content-hash": "a9673b6decde4278c21615caa82ce0ec",
+    "packages": [
+        {
+            "name": "finwo/property-accessor",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/finwo/property-accessor.git",
+                "reference": "43a9b49f82ba566800068427c12d28ac48efa8e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/finwo/property-accessor/zipball/43a9b49f82ba566800068427c12d28ac48efa8e3",
+                "reference": "43a9b49f82ba566800068427c12d28ac48efa8e3",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Finwo\\PropertyAccessor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Robin Bron",
+                    "email": "robin@finwo.nl"
+                }
+            ],
+            "time": "2016-04-13 09:05:33"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "finwo/property-accessor": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
