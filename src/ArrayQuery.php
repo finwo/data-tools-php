@@ -266,6 +266,8 @@ class ArrayQuery
                         return false;
                     }
                     break;
+                case 'validate':
+                    return call_user_func($filter['value'], $row[$filter['field']], $row);
                 default:
                     //unknown filter
                     break;
