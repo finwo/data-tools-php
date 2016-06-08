@@ -1,5 +1,6 @@
 {
     "name": "finwo/data-tools",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Robin Bron",
@@ -12,6 +13,9 @@
         }
     },
     "require": {
-        "finwo/property-accessor": "dev-master"
+        "finwo/property-accessor": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
     }
 }
