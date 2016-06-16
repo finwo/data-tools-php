@@ -18,6 +18,8 @@ The develop branch is merged periodically into the master after confirming it's 
 -----
 
 ### Changelog
+- 2016-06-16
+    - Added UrlHandler
 - 2016-06-08
     - Created README
     - Added unit tests
