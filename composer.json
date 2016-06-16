@@ -13,7 +13,8 @@
         }
     },
     "require": {
-        "finwo/property-accessor": "*"
+        "finwo/property-accessor": "*",
+        "netresearch/jsonmapper":  "*"
     },
     "require-dev": {
         "phpunit/phpunit": "*"
