@@ -1,0 +1,17 @@
+{
+    "name": "finwo/data-tools",
+    "authors": [
+        {
+            "name": "Robin Bron",
+            "email": "robin@finwo.nl"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Finwo\\Datatools\\": "src/"
+        }
+    },
+    "require": {
+        "finwo/property-accessor": "dev-master"
+    }
+}
